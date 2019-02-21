@@ -37,7 +37,7 @@ Just about everything you need is setup for you.
 
 # Pull the project
 
-$ git pull https://github.com/HugoWALTER/EpiLights.git
+$ git clone https://github.com/HugoWALTER/EpiLights.git
 
 # Get your autolog at this adress (https://intra.epitech.eu/admin/autolog) and replace the token in "YOUR_AUTOLOG_HERE" var in config.js.
 
