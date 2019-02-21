@@ -16,7 +16,7 @@ EPILIGHT is a system able to connect to the EPITECH Intranet and display a light
 Colours of the light:
 
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) : The room will be occupied in 30 minutes.
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) : The room is occupied. (An activity is currently in this room).
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) : The room is busy. (An activity is currently in this room).
 - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) : The room is free.
 
 ## Requirement
@@ -24,24 +24,53 @@ Colours of the light:
 * Last version of NodeJS.
 * Libraries
 	* [Axios](https://www.npmjs.com/package/axios) v0.8
+	* [Pigpio](https://www.npmjs.com/package/pigpio) v1.2.1
  
 
 ## Build Setup
 
 Just about everything you need is setup for you.
 
--   Import the project into the Raspberry and unzip it.
 -	Set an internet connection to IONIS or plug it in ethernet.
--	Copy launch.sh in the root of your raspberry and add this line in the .bashrc "./launch.sh" and please make that a terminal launch automatically after a reboot (on a RPI3 , add @lxterminal in the auto-start file)
--	Get your autolog at this adress (https://intra.epitech.eu/admin/autolog) and replace the token in "YOUR_AUTOLOG_HERE" var in json/index.js.
+
+``` bash
+
+# Pull the project
+
+$ git pull https://github.com/HugoWALTER/EpiLights.git
+
+# Get your autolog at this adress (https://intra.epitech.eu/admin/autolog) and replace the token in "YOUR_AUTOLOG_HERE" var in config.js.
+
+$ nano config.js
+
+# Install dependencies
+
+$ npm install
+  
+# Copy service into systemd
+
+$ cp epilight.service /etc/systemd/system/epilight.service
+
+# Enable service
+
+$ systemctl enable epilight.service
+
+# Start service
+
+$ systemctl start epilight.service
+
+```
+
 All the job will be done for you !
 
-In case of index.js in the light repository doesn't work after a successful reboot :
-- Launch get_rooms.sh at the root of the EpiLight repository
-- Please go in the Light repository and launch this command: "sudo node index.js" and let the script run.
+## Troubleshooting 
 
-In case of crontab failed :
-- Set this line after doing a crontab -e  -> 0 * * * * "$(command -v bash)" -c 'cd /home/pi/EpiLight && sudo ./get_rooms.sh'
+In case of index.js in the EpiLights repository doesn't work after a successful reboot :
+- Please check the status of the service ("systemctl status epilight.service")
+- Please go in the Epilights repository and launch this command: "node index.js" and let the script run.
+
+In case of the connection crashed :
+- An auto-refresh condition is setup for you to call the intranet each minute to update the rooms.
 
 ## PROJECT DOCUMENTATION
 
@@ -49,10 +78,11 @@ Inside the repository, you can find some files :
 The JSON folder will contain: 
 - Call to the Epitech API
 
-The Light folder will contain:
+The Manager folder will contain:
 
 - Each connection associed to the light and the room.
 
-## License
+The config.js file will contain:
 
-This project is the property of EPITECH.
+- Variable for your autolog
+- Naming of the rooms in Epitech Nantes

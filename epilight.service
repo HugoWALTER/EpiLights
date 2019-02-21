@@ -1,0 +1,13 @@
+[Unit]
+Description=EpiLight - control epitech room
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart=/usr/bin/node /home/pi/EpiLight/index.js
+
+[Install]
+WantedBy=multi-user.target
