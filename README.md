@@ -10,12 +10,12 @@ EPILIGHT is a system able to connect to the EPITECH Intranet and display a light
 **Current features:**
 
 - Auto rebooting of the raspberry.
-- Auto call to the EPITECH API and GET a Json at every hours with crontab -e.
+- Auto call to the EPITECH API and GET a JSON at every hour.
 - Auto refresh every 5 minutes whether the Intranet is down.
 
 Colours of the light:
 
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) : The room will be occupied in 30 minutes.
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) : The room will be busy in 30 minutes.
 - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) : The room is busy. (An activity is currently in this room).
 - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) : The room is free.
 
@@ -39,7 +39,7 @@ Just about everything you need is setup for you.
 
 $ git clone https://github.com/HugoWALTER/EpiLights.git
 
-# Get your autolog at this adress (https://intra.epitech.eu/admin/autolog) and replace the token in "YOUR_AUTOLOG_HERE" var in config.js.
+# Get your autolog at this address (https://intra.epitech.eu/admin/autolog) and replace the token in "YOUR_AUTOLOG_HERE" var in config.js.
 
 $ nano config.js
 
@@ -80,7 +80,7 @@ The JSON folder will contain:
 
 The Manager folder will contain:
 
-- Each connection associed to the light and the room.
+- Each connection associated with the light and the room.
 
 The config.js file will contain:
 
