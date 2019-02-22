@@ -1,4 +1,5 @@
 const api = require('./api')();
+const fs = require('fs');
 const config = require ('./../config');
 
 const token = process.env.EPILIGHTTOKEN;
@@ -18,12 +19,21 @@ module.exports = () => {
             Object.values(config.intra.room).forEach((roomName) => {
 			if (api.getRoomIdx(json, roomName) == -1)
                             json.push(  {start : new Date(), end: new Date(), room: roomName});	
-		    });
+            });
+            fs.writeFile('room.json', JSON.stringify(json), 'utf8', (err, data) => {
+                if (err) throw err;
+            });
+
             return json;
 		}).catch((err) => {
 		    console.log(err)
                 if (err)
-                    return [{}];
+                let json = [];
+                return fs.readFile('room.json', 'utf8', (err, data) => {
+                    if (err)
+                        throw err;
+                    return JSON.parse(data);
+                })
             });
         }
     }
