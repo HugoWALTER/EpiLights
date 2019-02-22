@@ -40,9 +40,9 @@ Just about everything you need is setup for you.
 
 $ git clone https://github.com/HugoWALTER/EpiLights.git
 
-# Get your autolog at this address (https://intra.epitech.eu/admin/autolog) and replace the token in your environnment.
+# Get your autolog at this address (https://intra.epitech.eu/admin/autolog) and replace the token into the service.
 
-$ export EPILIGHTTOKEN='YOUR_AUTOLOG_HERE'
+$ nano epilight.service and replace YOUR_TOKEN_HERE with your autolog
 
 # Install dependencies
 
@@ -88,4 +88,4 @@ The Manager folder will contain:
 
 The config.js file will contain:
 
-- Naming of the rooms in Epitech Nantes and is GPIO port
+- Naming of the rooms in Epitech Nantes and their GPIO port
