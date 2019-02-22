@@ -2,101 +2,41 @@ const config = require('./../config.js')
 
 module.exports = () => {
     return {
+        //set Red color, busy room
         busy: (room, led) => {
-            if (!room.search(config.intra.room.mordor)) {
-        	led[0][0].red.pwmWrite(230);
-                led[0][0].green.pwmWrite(0);
-                led[0][0].blue.pwmWrite(0);
-            }
-            if (!room.search(config.intra.room.comte)) {
-                led[0][1].red.pwmWrite(230);
-                led[0][1].green.pwmWrite(0);
-                led[0][1].blue.pwmWrite(0);
-            }
-            if (!room.search(config.intra.room.gallifrey)) {
-                led[0][2].red.pwmWrite(230);
-                led[0][2].green.pwmWrite(0);
-                led[0][2].blue.pwmWrite(0);
-            }
-            if (!room.search(config.intra.room.tatooine)) {
-                led[0][3].red.pwmWrite(230);
-                led[0][3].green.pwmWrite(0);
-                led[0][3].blue.pwmWrite(0);
-            }
-            if (!room.search(config.intra.room.torvalds)) {
-                led[0][4].red.pwmWrite(230);
-                led[0][4].green.pwmWrite(0);
-                led[0][4].blue.pwmWrite(0);
-            }
-            if (!room.search(config.intra.room.westeros)) {
-                led[0][5].red.pwmWrite(230);
-                led[0][5].green.pwmWrite(0);
-                led[0][5].blue.pwmWrite(0);
-            }
+            int i = 0;
+            Object.keys(config.intra.room).forEach(function(key, i) {
+                if (!room.search(config.intra.room[key].name)) {
+                    led[0][i].red.pwmWrite(230);
+                    led[0][i].green.pwmWrite(0);
+                    led[0][i].blue.pwmWrite(0);
+                }
+                i++;
+            });
         },
+        //set Blue color, intermediate room
         intermediate: (room, led) => {
-            if (!room.search(config.intra.room.mordor)) {
-                led[0][0].red.pwmWrite(0);
-                led[0][0].green.pwmWrite(0);
-                led[0][0].blue.pwmWrite(230);
-            }
-            if (!room.search(config.intra.room.comte)) {
-                led[0][1].red.pwmWrite(0);
-                led[0][1].green.pwmWrite(0);
-                led[0][1].blue.pwmWrite(230);
-            }
-            if (!room.search(config.intra.room.gallifrey)) {
-                led[0][2].red.pwmWrite(0);
-                led[0][2].green.pwmWrite(0);
-                led[0][2].blue.pwmWrite(230);
-            }
-            if (!room.search(config.intra.room.tatooine)) {
-                led[0][3].red.pwmWrite(0);
-                led[0][3].green.pwmWrite(0);
-                led[0][3].blue.pwmWrite(230);
-            }
-            if (!room.search(config.intra.room.torvalds)) {
-                led[0][4].red.pwmWrite(0);
-                led[0][4].green.pwmWrite(0);
-                led[0][4].blue.pwmWrite(230);
-            }
-            if (!room.search(config.intra.room.westeros)) {
-                led[0][5].red.pwmWrite(0);
-                led[0][5].green.pwmWrite(0);
-                led[0][5].blue.pwmWrite(230);
-            }
+            int j = 0;
+            Object.keys(config.intra.room).forEach(function(key, j) {
+                if (!room.search(config.intra.room[key].name)) {
+                    led[0][j].red.pwmWrite(0);
+                    led[0][j].green.pwmWrite(0);
+                    led[0][j].blue.pwmWrite(230);
+                }
+                j++;
+            });
         },
+        //set Green color, free room
         free: (room, led) => {
-            if (!room.search(config.intra.room.mordor)) {
-                led[0][0].red.pwmWrite(0);
-                led[0][0].green.pwmWrite(230);
-                led[0][0].blue.pwmWrite(0);
-            }
-            if (!room.search(config.intra.room.comte)) {
-                led[0][1].red.pwmWrite(0);
-                led[0][1].green.pwmWrite(230);
-                led[0][1].blue.pwmWrite(0);
-            }
-            if (!room.search(config.intra.room.gallifrey)) {
-                led[0][2].red.pwmWrite(0);
-                led[0][2].green.pwmWrite(230);
-                led[0][2].blue.pwmWrite(0);
-            }
-            if (!room.search(config.intra.room.tatooine)) {
-                led[0][3].red.pwmWrite(0);
-                led[0][3].green.pwmWrite(230);
-                led[0][3].blue.pwmWrite(0);
-            }
-            if (!room.search(config.intra.room.torvalds)) {
-                led[0][4].red.pwmWrite(0);
-                led[0][4].green.pwmWrite(230);
-                led[0][4].blue.pwmWrite(0);
-            }
-            if (!room.search(config.intra.room.westeros)) {
-                led[0][5].red.pwmWrite(0);
-                led[0][5].green.pwmWrite(230);
-                led[0][5].blue.pwmWrite(0);
-            }
+            int k = 0;
+            Object.keys(config.intra.room).forEach(function(key, k) {
+                if (!room.search(config.intra.room[key].name)) {
+                    led[0][k].red.pwmWrite(0);
+                    led[0][k].green.pwmWrite(230);
+                    led[0][k].blue.pwmWrite(0);
+                }
+                k++;
+            });
         }
     }
 }
