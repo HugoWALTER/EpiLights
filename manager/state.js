@@ -5,8 +5,8 @@ module.exports = () => {
         //set Red color, busy room
         busy: (room, led) => {
             let i = 0;
-            Object.keys(config.intra.room).forEach(roomName => {
-                if (!room.search(roomName.name)) {
+            Object.values(config.intra.room).forEach(roomN => {
+                if (!room.search(roomN.name)) {
                     led[0][i].red.pwmWrite(230);
                     led[0][i].green.pwmWrite(0);
                     led[0][i].blue.pwmWrite(0);
@@ -17,8 +17,8 @@ module.exports = () => {
         //set Blue color, intermediate room
         intermediate: (room, led) => {
             let i = 0;
-            Object.keys(config.intra.room).forEach(roomName => {
-                if (!room.search(roomName.name)) {
+            Object.values(config.intra.room).forEach(roomN => {
+                if (!room.search(roomN.name)) {
                     led[0][i].red.pwmWrite(0);
                     led[0][i].green.pwmWrite(0);
                     led[0][i].blue.pwmWrite(230);
@@ -29,8 +29,8 @@ module.exports = () => {
         //set Green color, free room
         free: (room, led) => {
             let i = 0;
-            Object.keys(config.intra.room).forEach(roomName => {
-                if (!room.search(roomName.name)) {
+            Object.values(config.intra.room).forEach(roomN => {
+                if (!room.search(roomN.name)) {
                     led[0][i].red.pwmWrite(0);
                     led[0][i].green.pwmWrite(230);
                     led[0][i].blue.pwmWrite(0);

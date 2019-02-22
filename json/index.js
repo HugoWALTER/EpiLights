@@ -18,7 +18,7 @@ module.exports = () => {
 		    });
             Object.values(config.intra.room).forEach((roomName) => {
 			if (api.getRoomIdx(json, roomName) == -1)
-                            json.push(  {start : new Date(), end: new Date(), room: roomName});	
+                            json.push(  {start : new Date(), end: new Date(), room: roomName.name});	
             });
             fs.writeFile('room.json', JSON.stringify(json), 'utf8', (err, data) => {
                 if (err) throw err;
@@ -27,8 +27,9 @@ module.exports = () => {
             return json;
 		}).catch((err) => {
 		    console.log(err)
-                if (err)
                 let json = [];
+                if (err)
+			throw err;
                 return fs.readFile('room.json', 'utf8', (err, data) => {
                     if (err)
                         throw err;
