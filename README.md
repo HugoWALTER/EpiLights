@@ -21,7 +21,8 @@ Colours of the light:
 
 ## Requirement
 
-* Last version of NodeJS.
+* Last version of [NodeJS](https://nodejs.org/en/).
+* Last version of [Git](https://git-scm.com/downloads).
 * Libraries
 	* [Axios](https://www.npmjs.com/package/axios) v0.8
 	* [Pigpio](https://www.npmjs.com/package/pigpio) v1.2.1
@@ -39,9 +40,9 @@ Just about everything you need is setup for you.
 
 $ git clone https://github.com/HugoWALTER/EpiLights.git
 
-# Get your autolog at this address (https://intra.epitech.eu/admin/autolog) and replace the token in "YOUR_AUTOLOG_HERE" var in config.js.
+# Get your autolog at this address (https://intra.epitech.eu/admin/autolog) and replace the token in your environnment.
 
-$ nano config.js
+$ export EPILIGHTTOKEN='YOUR_AUTOLOG_HERE'
 
 # Install dependencies
 
@@ -71,6 +72,9 @@ In case of index.js in the EpiLights repository doesn't work after a successful 
 
 In case of the connection crashed :
 - An auto-refresh condition is setup for you to call the intranet each minute to update the rooms.
+
+A room is missing ?
+- Only add the room in the config.js and 
 
 ## PROJECT DOCUMENTATION
 
