@@ -1,7 +1,6 @@
 module.exports = ({
     intra: {
         room: {
-            mordor: {
                 name:   "Mordor",
                 gpio:   {
                     R: 16,
@@ -9,7 +8,7 @@ module.exports = ({
                     B: 21
                 }
             },
-            comte: {
+            {
                 name:   "La-Comte",
                 gpio:   {
                     R: 26,
@@ -17,7 +16,7 @@ module.exports = ({
                     B: 13
                 }
             },
-            gallifrey: {
+            {
                 name:   "Gallifrey",
                 gpio:   {
                     R: 12,
@@ -25,7 +24,7 @@ module.exports = ({
                     B: 5
                 }
             },
-            westeros: {
+            {
                 name:   "Westeros",
                 gpio:   {
                     R: 18,
@@ -33,7 +32,7 @@ module.exports = ({
                     B: 10
                 }
             },
-            torvalds: {
+            {
                 name:   "Torvalds",
                 gpio:   {
                     R: 17,
@@ -41,7 +40,7 @@ module.exports = ({
                     B: 22
                 }
             },
-            tatooine: {
+            {
                 name:   "Tatooine",
                 gpio:   {
                     R: 25,
@@ -49,6 +48,5 @@ module.exports = ({
                     B: 23
                 }
             }
-        }
-    },
+        },
 });
