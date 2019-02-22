@@ -74,7 +74,7 @@ In case of the connection crashed :
 - An auto-refresh condition is setup for you to call the intranet each minute to update the rooms.
 
 A room is missing ?
-- Only add the room in the config.js and 
+- Only add the room in the config.js and setup GPIO port for the room 
 
 ## PROJECT DOCUMENTATION
 
@@ -88,5 +88,4 @@ The Manager folder will contain:
 
 The config.js file will contain:
 
-- Variable for your autolog
-- Naming of the rooms in Epitech Nantes
+- Naming of the rooms in Epitech Nantes and is GPIO port
