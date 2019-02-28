@@ -19,13 +19,13 @@ module.exports = () => {
 		            if (api.getRoomIdx(json, roomName) == -1)
                         json.push({start : new Date(), end: new Date(), room: roomName.name});
                 });
-                fs.writeFileSync('./../test/fixtures/room.json', JSON.stringify(json), 'utf8');
+                fs.writeFileSync('/home/pi/EpiLight/test/fixtures/room.json', JSON.stringify(json), 'utf8');
                 return json;
 		    }).catch((err) => {
 		        console.error(err);
                 let json = [];
                 if (err) throw err;
-                return fs.readFile('./../test/fixtures/room.json', 'utf8', (err, data) => {
+                return fs.readFile('/home/pi/EpiLight/test/fixtures/room.json', 'utf8', (err, data) => {
                     if (err) throw err;
                     return JSON.parse(data);
                 })
