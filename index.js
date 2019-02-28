@@ -12,7 +12,7 @@ function refreshPlanning() {
 			})
 		})
 		.catch((err) => {
-		console.log(err)
+		console.error(err)
 		});
 	}, 60000);
 }
