@@ -1,11 +1,11 @@
 const Gpio = require('pigpio').Gpio;
-const config = require('./../config.js');
+const config = require('./../config.json');
 
 module.exports = () => {
     return {
         init: () => {
             let rooms = [];
-            Object.values(config.intra.room).forEach((roomName) => {
+            Object.values(config).forEach((roomName) => {
 		   rooms.push(
                     {
                         red: new Gpio(roomName.gpio['R'], {mode: Gpio.OUTPUT}),
