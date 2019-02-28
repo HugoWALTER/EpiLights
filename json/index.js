@@ -17,17 +17,15 @@ module.exports = () => {
 		        });
                 Object.values(config).forEach((roomName) => {
 		            if (api.getRoomIdx(json, roomName) == -1)
-                        json.push(  {start : new Date(), end: new Date(), room: roomName.name});	
+                        json.push({start : new Date(), end: new Date(), room: roomName.name});	
                 });
-                fs.writeFile('room.json', JSON.stringify(json), 'utf8', (err, data) => {
-                    if (err) throw err;
-                });
+                fs.writeFileSync('./../test/fixtures/room.json', JSON.stringify(json), 'utf8');
                 return json;
 		    }).catch((err) => {
 		        console.log(err);
                 let json = [];
                 if (err) throw err;
-                return fs.readFile('room.json', 'utf8', (err, data) => {
+                return fs.readFile('./../test/fixtures/room.json', 'utf8', (err, data) => {
                     if (err) throw err;
                     return JSON.parse(data);
                 })
