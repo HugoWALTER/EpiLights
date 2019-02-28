@@ -7,7 +7,8 @@ const token = process.env.EPILIGHTTOKEN;
 module.exports = () => {
     return {
         getPlanning : () => {
-		    (user) => api.getPlanning(token, user[0])
+                return Promise.all([api.getUser(token)])
+		    .then((user) => api.getPlanning(token, user[0]))
 		    .then((planning) => {
                 const rooms = api.getRoom(planning);
                 let json = [];
