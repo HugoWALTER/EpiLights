@@ -1,0 +1,4 @@
+/node_modules/*
+
+# Ignore test files except !build/index.js
+test/*
